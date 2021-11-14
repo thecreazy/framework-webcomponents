@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from "react-dom";
+import reactToWebComponent from "react-to-webcomponent";
 
 import Counter from './components/Counter';
 
@@ -10,4 +11,4 @@ const Index = () => (
   </div>
 );
 
-ReactDOM.render(<Index />, document.getElementById("react-component"))
+customElements.define("react-counter", reactToWebComponent(Index, React, ReactDOM));
