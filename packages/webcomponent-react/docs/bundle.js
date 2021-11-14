@@ -494,9 +494,53 @@
 
 	var ReactDOM = reactDom.exports;
 
-	const Counter = () => /*#__PURE__*/React.createElement("h2", null, "counter component");
+	const prefix = "WEBCOMP-";
+	const reactPrefix = "REACTCOMP-";
+	var event = {
+	  prefix,
+	  reactPrefix,
+	  react: {
+	    actualValue: `${prefix}${reactPrefix}actualValue`,
+	    incValue: `${prefix}${reactPrefix}incValue`,
+	    decValue: `${prefix}${reactPrefix}decValue`
+	  }
+	};
 
-	const Index = () => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", null, "Counter component"), /*#__PURE__*/React.createElement(Counter, null));
+	const Counter = () => {
+	  const [count, setCount] = react.exports.useState(0);
+	  react.exports.useEffect(() => {
+	    const customEvent = new CustomEvent(event.react.actualValue, {
+	      detail: count
+	    });
+	    window.dispatchEvent(customEvent);
+	  }, [count]);
+
+	  const onInc = () => {
+	    setCount(prev => prev + 1);
+	    const customEvent = new CustomEvent(event.react.incValue, {
+	      detail: count
+	    });
+	    window.dispatchEvent(customEvent);
+	  };
+
+	  const onDec = () => {
+	    setCount(prev => prev - 1);
+	    const customEvent = new CustomEvent(event.react.decValue, {
+	      detail: count
+	    });
+	    window.dispatchEvent(customEvent);
+	  };
+
+	  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h2", null, "Counter: ", /*#__PURE__*/React.createElement("b", null, count)), /*#__PURE__*/React.createElement("button", {
+	    onClick: onInc
+	  }, "Increment"), /*#__PURE__*/React.createElement("button", {
+	    onClick: onDec
+	  }, "Decrement"));
+	};
+
+	const Index = () => /*#__PURE__*/React.createElement("div", {
+	  id: "webcomp-counter"
+	}, /*#__PURE__*/React.createElement("h1", null, "Counter component"), /*#__PURE__*/React.createElement(Counter, null));
 
 	ReactDOM.render( /*#__PURE__*/React.createElement(Index, null), document.getElementById("react-component"));
 

@@ -6,5 +6,10 @@
         <h1>Exmple of webcomponent in react</h1>
         <div id="react-component"></div>
         <script src="./bundle.js"></script>
+        <script>
+            window.addEventListener("WEBCOMP-REACTCOMP-actualValue", (e) => {
+                console.warn("actualValue: " + e.detail)
+            })
+        </script>
     </body>
 </html>
