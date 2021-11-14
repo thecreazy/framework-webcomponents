@@ -1,5 +1,13 @@
 {
+  "scripts": {
+    "lint": "eslint ./packages/**/src/* --ext .js --ext .jsx --fix"
+  },
   "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.0",
     "lerna": "^4.0.0"
   },
   "name": "framework-webcompoents"

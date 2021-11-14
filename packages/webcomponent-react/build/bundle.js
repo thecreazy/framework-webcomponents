@@ -16049,11 +16049,11 @@
 	  checkDCE();
 	}
 
-	const Counter = () => {
+	const Counter = function () {
 	  return /*#__PURE__*/React.createElement("h2", null, "counter component");
 	};
 
-	const Index = () => {
+	const Index = function () {
 	  return /*#__PURE__*/React$1.createElement(React$1.Fragment, null, /*#__PURE__*/React$1.createElement("h1", null, "Counter component"), /*#__PURE__*/React$1.createElement(Counter, null));
 	};
 

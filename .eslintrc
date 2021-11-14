@@ -1,0 +1,6 @@
+{
+    "extends": "airbnb",
+    "rules": {
+        "react/function-component-definition": 0
+    }
+}
