@@ -4,9 +4,14 @@
     </head>
     <body>
         <h1>Exmple of webcomponent in react</h1>
-        <react-counter startValue="10">
+        <button id="reset">set value to random</button>
+        <react-counter startvalue="10" id="react-counter">
         <script src="./bundle.js"></script>
         <script>
+            document.querySelector("#reset").addEventListener("click", () => {
+                console.log("ciao")
+                document.querySelector("#react-counter").setAttribute("startvalue", Math.floor(Math.random() * 100000));
+            })
             window.addEventListener("WEBCOMP-REACTCOMP-actualValue", (e) => {
                 console.warn("actualValue: " + e.detail)
             })

@@ -740,7 +740,10 @@
 	const Counter = ({
 	  defaultValue
 	}) => {
-	  const [count, setCount] = react.exports.useState(defaultValue);
+	  const [count, setCount] = react.exports.useState(Number(defaultValue || 0));
+	  react.exports.useEffect(() => {
+	    if (defaultValue !== count && !Number.isNaN(defaultValue)) setCount(Number(defaultValue));
+	  }, [defaultValue]);
 	  react.exports.useEffect(() => {
 	    const customEvent = new CustomEvent(event.react.actualValue, {
 	      detail: count
@@ -764,9 +767,11 @@
 	    window.dispatchEvent(customEvent);
 	  };
 
-	  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h2", null, "Counter: ", /*#__PURE__*/React.createElement("b", null, count)), /*#__PURE__*/React.createElement("button", {
+	  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h2", null, "Counter:", /*#__PURE__*/React.createElement("b", null, count)), /*#__PURE__*/React.createElement("button", {
+	    type: "button",
 	    onClick: onInc
 	  }, "Increment"), /*#__PURE__*/React.createElement("button", {
+	    type: "button",
 	    onClick: onDec
 	  }, "Decrement"));
 	};
@@ -774,23 +779,19 @@
 	Counter.propTypes = {
 	  defaultValue: PropTypes.number.isRequired
 	};
-	Counter.defaultProps = {
-	  defaultValue: 0
-	};
 
-	const Index = props => /*#__PURE__*/React.createElement("div", {
+	const Index = ({
+	  startvalue
+	}) => /*#__PURE__*/React.createElement("div", {
 	  id: "webcomp-counter"
-	}, /*#__PURE__*/React.createElement("h1", null, "Counter component"), /*#__PURE__*/React.createElement(Counter, {
-	  defaultValue: props.startvalue
+	}, /*#__PURE__*/React.createElement("h1", null, "Counter component in React"), /*#__PURE__*/React.createElement(Counter, {
+	  defaultValue: startvalue
 	}));
 
 	Index.propTypes = {
 	  startvalue: PropTypes.number.isRequired
 	};
-	Index.defaultProps = {
-	  startvalue: 0
-	};
-	customElements.define("react-counter", reactToWebComponent(Index, React, ReactDOM));
+	customElements.define('react-counter', reactToWebComponent(Index, React, ReactDOM));
 
 })();
 //# sourceMappingURL=bundle.js.map

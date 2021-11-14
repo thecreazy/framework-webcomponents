@@ -1,6 +1,10 @@
 {
     "extends": "airbnb",
     "rules": {
-        "react/function-component-definition": 0
+        "react/function-component-definition": 0,
+        "import/no-relative-packages": 0,
+    },
+    "env": {
+        "browser": true,
     }
 }
