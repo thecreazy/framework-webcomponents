@@ -10,6 +10,7 @@
     "serve": "yarn build && npx http-server ./docs"
   },
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-to-webcomponent": "^1.5.1"

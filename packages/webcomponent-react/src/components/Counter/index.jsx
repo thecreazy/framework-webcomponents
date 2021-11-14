@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from "prop-types";
 
 import event from '../../../../../constants/event';
 
-const Counter = () => {
-  const [count, setCount] = useState(0);
+const Counter = ({defaultValue}) => {
+  const [count, setCount] = useState(defaultValue);
 
   useEffect(() => {
     const customEvent = new CustomEvent(event.react.actualValue, {detail: count})
@@ -27,6 +28,14 @@ const Counter = () => {
     <button onClick={onInc}>Increment</button>
     <button onClick={onDec}>Decrement</button>
   </>;
+}
+
+Counter.propTypes = {
+  defaultValue: PropTypes.number.isRequired,
+}
+
+Counter.defaultProps = {
+  defaultValue: 0
 }
 
 export default Counter
