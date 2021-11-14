@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from "react-dom";
 
 import Counter from './components/Counter';
 
@@ -9,4 +10,4 @@ const Index = () => (
   </>
 );
 
-export default Index;
+ReactDOM.render(<Index />, document.getElementById("react-component"));
