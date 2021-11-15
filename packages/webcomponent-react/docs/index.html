@@ -9,7 +9,6 @@
         <script src="./bundle.js"></script>
         <script>
             document.querySelector("#reset").addEventListener("click", () => {
-                console.log("ciao")
                 document.querySelector("#react-counter").setAttribute("startvalue", Math.floor(Math.random() * 100000));
             })
             window.addEventListener("WEBCOMP-REACTCOMP-actualValue", (e) => {
