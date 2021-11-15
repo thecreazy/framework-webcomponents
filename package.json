@@ -10,5 +10,24 @@
     "eslint-plugin-react": "^7.27.0",
     "lerna": "^4.0.0"
   },
-  "name": "framework-webcompoents"
+  "name": "framework-webcompoents",
+  "description": "A lerna repo with examples to how create a web component using different frameworks",
+  "author": "@thecreazy <canella_riccardo@icloud.com> (https://canellariccardo.it)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:thecreazy/framework-webcomponents.git"
+  },
+  "keywords": [
+    "javascript",
+    "lerna",
+    "web components"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thecreazy/framework-webcomponents/issues"
+  },
+  "homepage": "https://github.com/thecreazy/framework-webcomponents#readme",
+  "files": [
+    "build"
+  ]
 }

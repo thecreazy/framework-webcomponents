@@ -2,9 +2,13 @@
   "name": "webcomponent-react",
   "version": "1.0.0",
   "description": "Webcomponent made in react",
-  "main": "index.js",
+  "main": "build/bundle.js",
   "author": "Riccardo Canella <canella_riccardo@icloud.com>",
   "license": "MIT",
+  "directories": {
+    "doc": "docs",
+    "build": "build"
+  },
   "scripts": {
     "build": "NODE_ENV=prod rollup --config rollup.config.js",
     "serve": "yarn build && npx http-server ./docs"
