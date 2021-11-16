@@ -1,3 +1,4 @@
+<svelte:options tag="svelte-event-or-odd" />
 <script>
 	let actualValue = Math.floor(Math.random() * 100000);
     let whatTypeIs = actualValue % 2 === 0 ? "Even" : "Odd"
@@ -10,4 +11,12 @@
 </main>
 
 <style>
+    main {
+        border: 2px solid black;
+        padding: 10px;
+    }
+    h1, h2, h3{
+        margin: 0;
+        margin-bottom: 8px;
+    }
 </style>
