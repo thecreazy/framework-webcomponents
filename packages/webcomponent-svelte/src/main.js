@@ -1,10 +1,3 @@
-import App from './components/EvenOrOdd/index.svelte';
+import EvenOrOdd from './components/EvenOrOdd/index.svelte';
 
-const app = new App({
-	target: document.body,
-	props: {
-		name: 'world'
-	}
-});
-
-export default app;
+customElements.define('svelte-even-or-odd', EvenOrOdd);

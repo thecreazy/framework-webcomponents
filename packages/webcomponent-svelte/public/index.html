@@ -14,7 +14,13 @@
 
 <body>
 	<h1>Exmple of webcomponent in Svelte</h1>
-	<svelte-even-or-odd></svelte-even-or-odd>
+	<button id="random">Random Value</button>
+	<svelte-even-or-odd id="svelte-even-or-odd" value="111"></svelte-even-or-odd>
 	<script src='/build/bundle.js'></script>
+	<script>
+		 document.querySelector("#random").addEventListener("click", () => {
+			document.querySelector("#svelte-even-or-odd").setAttribute("value", Math.floor(Math.random() * 100000));
+		})
+	</script>
 </body>
 </html>
