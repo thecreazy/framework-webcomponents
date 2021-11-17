@@ -3,6 +3,8 @@
     "rules": {
         "react/function-component-definition": 0,
         "import/no-relative-packages": 0,
+        "global-require": 0,
+        "no-console": 0
     },
     "env": {
         "browser": true,
