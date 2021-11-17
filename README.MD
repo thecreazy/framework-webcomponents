@@ -16,6 +16,10 @@ This repo was created for a list of my Medium article:
 
 <img src="https://github.com/thecreazy/framework-webcomponents/blob/main/docs/1.png?raw=true" alt="Icon" width="100%"/>
 
+## 2) [How to: Create a web component in Svelte]()
+
+<img src="https://github.com/thecreazy/framework-webcomponents/blob/main/docs/2.png?raw=true" alt="Icon" width="100%"/>
+
 
 If you want help me to improve it, feel free to open issue/pull request 
 
