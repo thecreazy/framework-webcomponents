@@ -1,7 +1,14 @@
 {
-  "name": "svelte-app",
+  "name": "webcomponent-svelte",
   "version": "1.0.0",
-  "private": true,
+  "description": "Webcomponent made in svelte",
+  "main": "build/bundle.js",
+  "author": "Riccardo Canella <canella_riccardo@icloud.com>",
+  "license": "MIT",
+  "directories": {
+    "doc": "docs",
+    "build": "build"
+  },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
