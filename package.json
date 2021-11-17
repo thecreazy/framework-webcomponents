@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "lint": "eslint ./packages/**/src/* --ext .js --ext .jsx --fix"
+    "lint": "eslint ./packages/** --ext .js --ext .jsx --fix"
   },
   "devDependencies": {
     "eslint": "^8.2.0",

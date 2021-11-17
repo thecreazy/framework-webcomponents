@@ -8,52 +8,66 @@ import css from 'rollup-plugin-css-only';
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
-	let server;
+  let server;
 
-	function toExit() {
-		if (server) server.kill(0);
-	}
+  function toExit() {
+    if (server) server.kill(0);
+  }
 
-	return {
-		writeBundle() {
-			if (server) return;
-			server = require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
-				stdio: ['ignore', 'inherit', 'inherit'],
-				shell: true
-			});
+  return {
+    writeBundle() {
+      if (server) return;
+      server = require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
+        stdio: ['ignore', 'inherit', 'inherit'],
+        shell: true,
+      });
 
-			process.on('SIGTERM', toExit);
-			process.on('exit', toExit);
-		}
-	};
+      process.on('SIGTERM', toExit);
+      process.on('exit', toExit);
+    },
+  };
 }
 
-export default {
-	input: 'src/main.js',
-	output: {
-		sourcemap: true,
-		format: 'iife',
-		name: 'app',
-		file: 'public/build/bundle.js'
-	},
-	plugins: [
-		svelte({
-			compilerOptions: {
-				dev: !production,
-				customElement: true,
-			}
-		}),
-		css({ output: 'bundle.css' }),
-		resolve({
-			browser: true,
-			dedupe: ['svelte']
-		}),
-		commonjs(),
-		!production && serve(),
-		!production && livereload('public'),
-		production && terser()
-	],
-	watch: {
-		clearScreen: false
-	}
-};
+const plugins = [
+  svelte({
+    compilerOptions: {
+      dev: !production,
+      customElement: true,
+    },
+  }),
+  css({ output: 'bundle.css' }),
+  resolve({
+    browser: true,
+    dedupe: ['svelte'],
+  }),
+  commonjs(),
+  !production && serve(),
+  !production && livereload('public'),
+  production && terser(),
+];
+
+export default [{
+  input: 'src/main.js',
+  output: {
+    sourcemap: true,
+    format: 'iife',
+    name: 'app',
+    file: 'public/build/bundle.js',
+  },
+  plugins,
+  watch: {
+    clearScreen: false,
+  },
+}, {
+  input: 'src/main.js',
+  output: {
+    sourcemap: true,
+    format: 'iife',
+    name: 'app',
+    file: 'build/bundle.js',
+  },
+  plugins,
+  watch: {
+    clearScreen: false,
+  },
+}];
