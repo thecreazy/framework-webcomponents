@@ -737,6 +737,8 @@
 	  }
 	};
 
+	console.log(event);
+
 	const Counter = ({
 	  defaultValue
 	}) => {
@@ -769,11 +771,11 @@
 
 	  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h2", null, "Counter:", /*#__PURE__*/React.createElement("b", null, count)), /*#__PURE__*/React.createElement("button", {
 	    type: "button",
-	    onClick: onInc
-	  }, "Increment"), /*#__PURE__*/React.createElement("button", {
-	    type: "button",
 	    onClick: onDec
-	  }, "Decrement"));
+	  }, "Decrement"), /*#__PURE__*/React.createElement("button", {
+	    type: "button",
+	    onClick: onInc
+	  }, "Increment"));
 	};
 
 	Counter.propTypes = {

@@ -1,0 +1,12 @@
+{
+    "name": "webcomponent-constants",
+    "version": "1.0.0",
+    "description": "Webcomponent constants for all packages",
+    "main": "event.js",
+    "author": "Riccardo Canella <canella_riccardo@icloud.com>",
+    "license": "MIT",
+    "scripts": {},
+    "devDependencies": {},
+    "dependencies": {}
+  }
+  

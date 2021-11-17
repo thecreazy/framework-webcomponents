@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import event from '../../../../../constants/event';
+import event from 'webcomponent-constants';
 
 const Counter = ({ defaultValue }) => {
   const [count, setCount] = useState(Number(defaultValue || 0));
