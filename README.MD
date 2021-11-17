@@ -8,7 +8,7 @@
 
 [![GitHub license][githublicense]][license-url] [![Open Source Love svg1][opensource]][opensource-url][![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
-# 📷 Framework Web Components
+# Framework Web Components
 
 This repo was created for a list of my Medium article:
 
